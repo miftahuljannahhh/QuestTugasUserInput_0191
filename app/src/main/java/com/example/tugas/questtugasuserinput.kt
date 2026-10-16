@@ -219,3 +219,16 @@ fun BiodataForm() {
         }
         Spacer(Modifier.height(dimensionResource(R.dimen.gap_medium)))
 
+        OutlinedTextField(
+            value = email,
+            onValueChange = { email = it },
+            placeholder = { Hint(R.string.hint_email) },
+            textStyle = fieldTextStyle,
+            singleLine = true,
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+            shape = fieldShape,
+            colors = fieldColors,
+            modifier = fieldModifier.fillMaxWidth()
+        )
+        Spacer(Modifier.height(dimensionResource(R.dimen.gap_medium)))
+
