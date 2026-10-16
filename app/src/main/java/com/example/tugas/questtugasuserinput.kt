@@ -383,3 +383,25 @@ fun BiodataForm() {
         }
     }
 
+    if (showDatePicker) {
+        val pickerState = rememberDatePickerState()
+        DatePickerDialog(
+            onDismissRequest = { showDatePicker = false },
+            confirmButton = {
+                TextButton(onClick = {
+                    pickerState.selectedDateMillis?.let {
+                        birthDate = SimpleDateFormat(datePattern, Locale.getDefault())
+                            .apply { timeZone = TimeZone.getTimeZone(timeZoneId) }
+                            .format(Date(it))
+                    }
+                    showDatePicker = false
+                }) { Text(stringResource(R.string.dialog_ok)) }
+            },
+            dismissButton = {
+                TextButton(onClick = { showDatePicker = false }) {
+                    Text(stringResource(R.string.dialog_cancel))
+                }
+            }
+        ) { DatePicker(state = pickerState) }
+    }
+}
