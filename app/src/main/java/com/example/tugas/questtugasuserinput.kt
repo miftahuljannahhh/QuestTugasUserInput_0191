@@ -73,3 +73,12 @@ private fun dimenSp(id: Int): TextUnit {
     return with(LocalDensity.current) { dp.toSp() }
 }
 
+@Suppress("UnusedMaterial3ScaffoldPaddingParameter")
+@Composable
+fun BiodataScreen() {
+    val cardShape = RoundedCornerShape(
+        topStart = dimensionResource(R.dimen.card_corner),
+        topEnd = dimensionResource(R.dimen.card_corner)
+    )
+
+}
