@@ -335,3 +335,19 @@ fun BiodataForm() {
         }
         Spacer(Modifier.height(dimensionResource(R.dimen.gap_medium)))
 
+        val activeBrush = Brush.horizontalGradient(
+            listOf(
+                colorResource(R.color.purple_button),
+                colorResource(R.color.purple_button_end)
+            )
+        )
+        val disabledBrush = SolidColor(colorResource(R.color.button_disabled))
+
+        val selectedSkills = skillNames
+            .filterIndexed { i, _ -> skills[i] }
+            .joinToString(separator)
+        val resultMessage = stringResource(
+            R.string.result_message,
+            firstName, lastName, email, birthDate, experience, selectedSkills
+        )
+
