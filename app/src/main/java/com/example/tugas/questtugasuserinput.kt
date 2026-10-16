@@ -179,4 +179,19 @@ fun BiodataForm() {
             .verticalScroll(rememberScrollState())
             .padding(dimensionResource(R.dimen.card_padding)),
         horizontalAlignment = Alignment.CenterHorizontally
-    )
+    ) {
+        Text(
+            text = stringResource(R.string.title_form),
+            fontSize = dimenSp(R.dimen.text_title),
+            fontWeight = FontWeight.Bold,
+            color = colorResource(R.color.purple_title)
+        )
+        Spacer(Modifier.height(dimensionResource(R.dimen.gap_small)))
+        Text(
+            text = stringResource(R.string.subtitle_form),
+            fontSize = dimenSp(R.dimen.text_subtitle),
+            color = colorResource(R.color.subtitle_text),
+            textAlign = TextAlign.Center
+        )
+        Spacer(Modifier.height(dimensionResource(R.dimen.gap_large)))
+
