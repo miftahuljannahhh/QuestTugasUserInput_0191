@@ -151,3 +151,17 @@ fun BiodataForm() {
     val isValid = firstName.isNotBlank() && lastName.isNotBlank() && email.isNotBlank() &&
             birthDate.isNotBlank() && experience.isNotBlank() && skills.any { it }
 
+    val fieldShape = RoundedCornerShape(dimensionResource(R.dimen.field_corner))
+    val fieldColors = OutlinedTextFieldDefaults.colors(
+        focusedBorderColor = colorResource(R.color.purple_title),
+        unfocusedBorderColor = colorResource(R.color.field_border),
+        focusedContainerColor = colorResource(R.color.field_container),
+        unfocusedContainerColor = colorResource(R.color.field_container),
+        focusedTextColor = colorResource(R.color.field_text),
+        unfocusedTextColor = colorResource(R.color.field_text),
+        cursorColor = colorResource(R.color.purple_title)
+    )
+    val fieldTextStyle = TextStyle(fontSize = dimenSp(R.dimen.text_field))
+    val fieldModifier = Modifier.heightIn(min = dimensionResource(R.dimen.field_height))
+    val noRipple = remember { MutableInteractionSource() }
+
