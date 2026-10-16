@@ -14,5 +14,7 @@
     <string name="button_proceed">Proceed</string>
     <string name="dialog_ok">OK</string>
     <string name="dialog_cancel">Batal</string>
+    <string name="date_pattern">dd/MM/yyyy</string>
+    <string name="skill_separator">, </string>
     
 </resources>
