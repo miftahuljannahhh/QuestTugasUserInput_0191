@@ -7,4 +7,8 @@
     <dimen name="card_elevation">16dp</dimen>
     <dimen name="field_corner">14dp</dimen>
     <dimen name="field_height">52dp</dimen>
+    <dimen name="gap_small">8dp</dimen>
+    <dimen name="gap_medium">16dp</dimen>
+    <dimen name="gap_large">24dp</dimen>
+
 </resources>
