@@ -232,3 +232,32 @@ fun BiodataForm() {
         )
         Spacer(Modifier.height(dimensionResource(R.dimen.gap_medium)))
 
+        Row(horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.gap_small))) {
+            Box(modifier = Modifier.weight(1f)) {
+                OutlinedTextField(
+                    value = birthDate,
+                    onValueChange = {},
+                    readOnly = true,
+                    placeholder = { Hint(R.string.hint_birth_date) },
+                    textStyle = fieldTextStyle,
+                    singleLine = true,
+                    shape = fieldShape,
+                    colors = fieldColors,
+                    trailingIcon = {
+                        Icon(
+                            painter = painterResource(R.drawable.ic_calendar),
+                            contentDescription = stringResource(R.string.cd_calendar),
+                            modifier = Modifier.size(dimensionResource(R.dimen.icon_size))
+                        )
+                    },
+                    modifier = fieldModifier.fillMaxWidth()
+                )
+                Box(
+                    modifier = Modifier
+                        .matchParentSize()
+                        .clickable(interactionSource = noRipple, indication = null) {
+                            showDatePicker = true
+                        }
+                )
+            }
+
