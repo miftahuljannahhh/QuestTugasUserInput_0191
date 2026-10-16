@@ -122,3 +122,13 @@ fun BiodataScreen() {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun BiodataForm() {
+    val context = LocalContext.current
+    val experiences = stringArrayResource(R.array.experience_options)
+    val skillNames = listOf(
+        stringResource(R.string.skill_android),
+        stringResource(R.string.skill_uiux),
+        stringResource(R.string.skill_web)
+    )
