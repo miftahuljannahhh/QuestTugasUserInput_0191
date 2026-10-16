@@ -145,3 +145,9 @@ fun BiodataForm() {
         mutableStateListOf<Boolean>().apply { repeat(skillNames.size) { add(false) } }
     }
 
+    var showDatePicker by remember { mutableStateOf(false) }
+    var expanded by remember { mutableStateOf(false) }
+
+    val isValid = firstName.isNotBlank() && lastName.isNotBlank() && email.isNotBlank() &&
+            birthDate.isNotBlank() && experience.isNotBlank() && skills.any { it }
+
