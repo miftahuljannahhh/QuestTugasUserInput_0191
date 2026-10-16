@@ -302,3 +302,36 @@ fun BiodataForm() {
         }
         Spacer(Modifier.height(dimensionResource(R.dimen.gap_medium)))
 
+        Text(
+            text = stringResource(R.string.label_skill),
+            fontSize = dimenSp(R.dimen.text_label),
+            fontWeight = FontWeight.Bold,
+            color = colorResource(R.color.black),
+            modifier = Modifier.fillMaxWidth()
+        )
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            skillNames.forEachIndexed { index, name ->
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Checkbox(
+                        checked = skills[index],
+                        onCheckedChange = { skills[index] = it },
+                        colors = CheckboxDefaults.colors(
+                            checkedColor = colorResource(R.color.purple_title),
+                            uncheckedColor = colorResource(R.color.checkbox_border),
+                            checkmarkColor = colorResource(R.color.white)
+                        )
+                    )
+                    Text(
+                        text = name,
+                        fontSize = dimenSp(R.dimen.text_field),
+                        color = colorResource(R.color.field_text)
+                    )
+                }
+            }
+        }
+        Spacer(Modifier.height(dimensionResource(R.dimen.gap_medium)))
+
