@@ -10,5 +10,6 @@
     <dimen name="gap_small">8dp</dimen>
     <dimen name="gap_medium">16dp</dimen>
     <dimen name="gap_large">24dp</dimen>
-
+    <dimen name="button_height">52dp</dimen>
+    <dimen name="icon_size">20dp</dimen>
 </resources>
