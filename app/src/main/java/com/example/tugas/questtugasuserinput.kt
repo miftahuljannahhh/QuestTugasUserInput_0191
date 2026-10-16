@@ -136,3 +136,12 @@ fun BiodataForm() {
     val datePattern = stringResource(R.string.date_pattern)
     val timeZoneId = stringResource(R.string.date_timezone)
 
+    var firstName by remember { mutableStateOf("") }
+    var lastName by remember { mutableStateOf("") }
+    var email by remember { mutableStateOf("") }
+    var birthDate by remember { mutableStateOf("") }
+    var experience by remember { mutableStateOf("") }
+    val skills = remember {
+        mutableStateListOf<Boolean>().apply { repeat(skillNames.size) { add(false) } }
+    }
+
