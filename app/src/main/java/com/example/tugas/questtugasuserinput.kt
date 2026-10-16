@@ -81,4 +81,16 @@ fun BiodataScreen() {
         topEnd = dimensionResource(R.dimen.card_corner)
     )
 
-}
+    Box(modifier = Modifier.fillMaxSize()) {
+
+        Scaffold(containerColor = colorResource(R.color.screen_background)) { _ ->
+            Box {
+                Image(
+                    painter = painterResource(R.drawable.bg_header),
+                    contentDescription = stringResource(R.string.cd_background),
+                    contentScale = ContentScale.Crop,
+                    alignment = Alignment.TopCenter,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(dimensionResource(R.dimen.header_image_height))
+                )
