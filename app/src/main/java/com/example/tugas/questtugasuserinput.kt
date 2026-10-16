@@ -172,3 +172,11 @@ fun BiodataForm() {
         color = colorResource(R.color.hint_text)
     )
 
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .navigationBarsPadding()
+            .verticalScroll(rememberScrollState())
+            .padding(dimensionResource(R.dimen.card_padding)),
+        horizontalAlignment = Alignment.CenterHorizontally
+    )
