@@ -94,3 +94,19 @@ fun BiodataScreen() {
                         .fillMaxWidth()
                         .height(dimensionResource(R.dimen.header_image_height))
                 )
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(dimensionResource(R.dimen.header_image_height))
+                        .background(
+                            Brush.verticalGradient(
+                                listOf(
+                                    colorResource(R.color.transparent),
+                                    colorResource(R.color.header_overlay)
+                                )
+                            )
+                        )
+                )
+            }
+        }
+
