@@ -110,3 +110,15 @@ fun BiodataScreen() {
             }
         }
 
+        Box(
+            modifier = Modifier
+                .padding(top = dimensionResource(R.dimen.card_top_margin))
+                .fillMaxSize()
+                .shadow(dimensionResource(R.dimen.card_elevation), cardShape)
+                .background(colorResource(R.color.white), cardShape)
+        ) {
+            BiodataForm()
+        }
+    }
+}
+
