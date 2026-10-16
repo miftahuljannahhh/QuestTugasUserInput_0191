@@ -165,3 +165,10 @@ fun BiodataForm() {
     val fieldModifier = Modifier.heightIn(min = dimensionResource(R.dimen.field_height))
     val noRipple = remember { MutableInteractionSource() }
 
+    @Composable
+    fun Hint(textRes: Int) = Text(
+        text = stringResource(textRes),
+        fontSize = dimenSp(R.dimen.text_field),
+        color = colorResource(R.color.hint_text)
+    )
+
