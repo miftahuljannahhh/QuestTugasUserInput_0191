@@ -261,3 +261,44 @@ fun BiodataForm() {
                 )
             }
 
+            Box(modifier = Modifier.weight(1f)) {
+                OutlinedTextField(
+                    value = experience,
+                    onValueChange = {},
+                    readOnly = true,
+                    placeholder = { Hint(R.string.hint_experience) },
+                    textStyle = fieldTextStyle,
+                    singleLine = true,
+                    shape = fieldShape,
+                    colors = fieldColors,
+                    trailingIcon = {
+                        Icon(
+                            painter = painterResource(R.drawable.ic_dropdown),
+                            contentDescription = stringResource(R.string.cd_dropdown),
+                            modifier = Modifier.size(dimensionResource(R.dimen.icon_size))
+                        )
+                    },
+                    modifier = fieldModifier.fillMaxWidth()
+                )
+                Box(
+                    modifier = Modifier
+                        .matchParentSize()
+                        .clickable(interactionSource = noRipple, indication = null) {
+                            expanded = true
+                        }
+                )
+                DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
+                    experiences.forEach { item ->
+                        DropdownMenuItem(
+                            text = { Text(item, fontSize = dimenSp(R.dimen.text_field)) },
+                            onClick = {
+                                experience = item
+                                expanded = false
+                            }
+                        )
+                    }
+                }
+            }
+        }
+        Spacer(Modifier.height(dimensionResource(R.dimen.gap_medium)))
+
