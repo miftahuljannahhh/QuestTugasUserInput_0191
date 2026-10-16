@@ -195,3 +195,14 @@ fun BiodataForm() {
         )
         Spacer(Modifier.height(dimensionResource(R.dimen.gap_large)))
 
+        Row(horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.gap_small))) {
+            OutlinedTextField(
+                value = firstName,
+                onValueChange = { firstName = it },
+                placeholder = { Hint(R.string.hint_first_name) },
+                textStyle = fieldTextStyle,
+                singleLine = true,
+                shape = fieldShape,
+                colors = fieldColors,
+                modifier = fieldModifier.weight(1f)
+            )
