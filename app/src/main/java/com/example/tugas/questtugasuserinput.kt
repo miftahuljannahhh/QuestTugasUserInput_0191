@@ -351,3 +351,35 @@ fun BiodataForm() {
             firstName, lastName, email, birthDate, experience, selectedSkills
         )
 
+        Button(
+            onClick = {
+                Toast.makeText(context, resultMessage, Toast.LENGTH_LONG).show()
+            },
+            enabled = isValid,
+            shape = fieldShape,
+            contentPadding = PaddingValues(),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = colorResource(R.color.transparent),
+                disabledContainerColor = colorResource(R.color.transparent)
+            ),
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(dimensionResource(R.dimen.button_height))
+        ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(if (isValid) activeBrush else disabledBrush, fieldShape),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    text = stringResource(R.string.button_proceed),
+                    fontSize = dimenSp(R.dimen.text_button),
+                    fontWeight = FontWeight.SemiBold,
+                    color = if (isValid) colorResource(R.color.white)
+                    else colorResource(R.color.button_disabled_text)
+                )
+            }
+        }
+    }
+
