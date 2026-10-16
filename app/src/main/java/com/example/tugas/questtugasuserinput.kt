@@ -132,3 +132,7 @@ fun BiodataForm() {
         stringResource(R.string.skill_uiux),
         stringResource(R.string.skill_web)
     )
+    val separator = stringResource(R.string.skill_separator)
+    val datePattern = stringResource(R.string.date_pattern)
+    val timeZoneId = stringResource(R.string.date_timezone)
+
